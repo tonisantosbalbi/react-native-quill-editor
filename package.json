@@ -1,10 +1,10 @@
 {
   "name": "react-native-quill-editor-2",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React Native Quill Rich Text Editor Wrapper",
   "main": "./index.tsx",
   "scripts": {
-    "postinstall": "cpy 'assets/quill.html' '../android/app/src/main/assets/quill.html'",
+    "postinstall": "cpy 'assets/quill.html' '../../android/app/src/main/assets/quill.html'",
     "wml:add": "wml add ./ ./Example/node_modules/react-native-quill-editor/",
     "wml:clean": "watchman watch-del-all",
     "android": "cd ./Example && yarn android && cd ../  && wml start",
@@ -37,6 +37,7 @@
     "@youngjuning/eslint-config-airbnb": "^0.4.0",
     "cpy-cli": "^4.1.0",
     "lint-staged": "^10.2.11",
+    "react-native-webview": "^11.23.0",
     "yorkie": "^2.0.0"
   }
 }
