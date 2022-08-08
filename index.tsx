@@ -6,7 +6,7 @@ type Props = {
   style?: ViewStyle
   defaultValue?: string
   options?: any
-  onChange?: (html: string) => void
+  onChange: (html: string) => void
 }
 
 const Quill = (props: Props) => {
@@ -43,7 +43,6 @@ const Quill = (props: Props) => {
 Quill.defaultProps = {
   style: {},
   defaultValue: '',
-  onChange: () => {},
   options: {},
 }
 

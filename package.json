@@ -1,6 +1,6 @@
 {
   "name": "react-native-quill-editor-2",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "React Native Quill Rich Text Editor Wrapper",
   "main": "./index.tsx",
   "scripts": {
