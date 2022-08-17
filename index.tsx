@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import { Dimensions, Platform, ViewStyle } from 'react-native'
 import { WebView, WebViewMessageEvent } from 'react-native-webview'
@@ -30,6 +31,7 @@ const Quill = (props: Props) => {
 
   return (
     <WebView
+      allowingReadAccessToURL={Platform.OS === 'ios' && 'file://'}
       onMessage={onMessage}
       source={Platform.OS === 'ios' ? require('./assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
       javaScriptEnabled
@@ -47,3 +49,4 @@ Quill.defaultProps = {
 }
 
 export default Quill
+/* eslint-enable */
