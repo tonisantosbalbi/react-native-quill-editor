@@ -31,7 +31,7 @@ const Quill = (props: Props) => {
 
   return (
     <WebView
-      allowingReadAccessToURL={Platform.OS === 'ios' && 'file://'}
+      allowingReadAccessToURL={Platform.OS === 'ios' ? 'file://' : ''}
       onMessage={onMessage}
       source={Platform.OS === 'ios' ? require('./assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
       javaScriptEnabled
