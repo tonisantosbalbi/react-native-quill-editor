@@ -1,14 +1,13 @@
 {
   "name": "react-native-quill-editor-2",
-  "version": "0.3.2",
+  "version": "0.9.1",
   "description": "React Native Quill Rich Text Editor Wrapper",
   "main": "./index.tsx",
   "scripts": {
     "wml:add": "wml add ./ ./Example/node_modules/react-native-quill-editor/",
     "wml:clean": "watchman watch-del-all",
     "android": "cd ./Example && yarn android && cd ../  && wml start",
-    "ios": "cd ./Example && yarn ios && cd ../ && wml start",
-    "publish": "npm publish --access public"
+    "ios": "cd ./Example && yarn ios && cd ../ && wml start"
   },
   "homepage": "https://github.com/tonisantosbalbi/react-native-quill-editor",
   "repository": "git@github.com:tonisantosbalbi/react-native-quill-editor.git",

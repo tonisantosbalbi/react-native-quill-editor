@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react'
-import { Dimensions, Platform, ViewStyle } from 'react-native'
+import { Dimensions, Platform, ViewStyle, View, Text } from 'react-native'
 import { WebView, WebViewMessageEvent } from 'react-native-webview'
 
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
 }
 
 const Quill = (props: Props) => {
+  const [loading, setLoading] = React.useState(true)
   const options = JSON.stringify({
     placeholder: '请输入...',
     modules: {
@@ -30,7 +31,10 @@ const Quill = (props: Props) => {
   }
 
   return (
+    <>
     <WebView
+    onLoadStart={() => {setLoading(true)}}
+    onLoadEnd={() => {setLoading(false)}}
       allowingReadAccessToURL={Platform.OS === 'ios' ? 'file:///' : ''}
       onMessage={onMessage}
       source={Platform.OS === 'ios' ? require('./assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
@@ -39,6 +43,8 @@ const Quill = (props: Props) => {
       injectedJavaScript={injectedJavaScript}
       style={{ height: Dimensions.get('window').height - 42, width: Dimensions.get('window').width, ...props.style }}
     />
+    {loading && <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}><Text>Loading Editor...</Text></View>}
+    </>
   )
 }
 
