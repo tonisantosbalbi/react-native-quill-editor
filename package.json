@@ -7,7 +7,8 @@
     "wml:add": "wml add ./ ./Example/node_modules/react-native-quill-editor/",
     "wml:clean": "watchman watch-del-all",
     "android": "cd ./Example && yarn android && cd ../  && wml start",
-    "ios": "cd ./Example && yarn ios && cd ../ && wml start"
+    "ios": "cd ./Example && yarn ios && cd ../ && wml start",
+    "publish": "npm publish --access public"
   },
   "homepage": "https://github.com/tonisantosbalbi/react-native-quill-editor",
   "repository": "git@github.com:tonisantosbalbi/react-native-quill-editor.git",
