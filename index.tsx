@@ -33,11 +33,10 @@ const Quill = (props: Props) => {
   return (
     <>
     <WebView
-    onLoadStart={() => {setLoading(true)}}
-    onLoadEnd={() => {setLoading(false)}}
-      allowingReadAccessToURL={Platform.OS === 'ios' ? 'file:///' : ''}
+      onLoadStart={() => {setLoading(true)}}
+      onLoadEnd={() => {setLoading(false)}}
       onMessage={onMessage}
-      source={Platform.OS === 'ios' ? require('./assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
+      source={Platform.OS === 'ios' ? require('../../ios/Assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
       javaScriptEnabled
       injectedJavaScriptBeforeContentLoaded={injectedJavaScriptBeforeContentLoaded}
       injectedJavaScript={injectedJavaScript}
