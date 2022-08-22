@@ -36,13 +36,12 @@ const Quill = (props: Props) => {
       onLoadStart={() => {setLoading(true)}}
       onLoadEnd={() => {setLoading(false)}}
       onMessage={onMessage}
-      source={Platform.OS === 'ios' ? require('../../ios/Assets/quill.html') : { uri: 'file:///android_asset/quill.html' }}
-      javaScriptEnabled
+      source={{uri: 'https://tonisantosbalbi.github.io/quillhtml.github.io/'}}
       injectedJavaScriptBeforeContentLoaded={injectedJavaScriptBeforeContentLoaded}
       injectedJavaScript={injectedJavaScript}
       style={{ height: Dimensions.get('window').height - 42, width: Dimensions.get('window').width, ...props.style }}
     />
-    {loading && <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}><Text>Loading Editor...</Text></View>}
+    {loading && <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}><Text>Loading...</Text></View>}
     </>
   )
 }
